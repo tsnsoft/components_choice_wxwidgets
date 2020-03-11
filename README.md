@@ -1,7 +1,9 @@
 # components_choice_wxwidgets
 Компоненты выбора в wxWidgets на С++ в Code::Blocks
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot1.png)
+
+![Screenshot](screenshot2.png)
 
 ```
 /***************************************************************
@@ -60,6 +62,7 @@ const long components_choice_wxwidgetsFrame::ID_CHOICE1 = wxNewId();
 const long components_choice_wxwidgetsFrame::ID_CHECKBOX1 = wxNewId();
 const long components_choice_wxwidgetsFrame::ID_RADIOBOX1 = wxNewId();
 const long components_choice_wxwidgetsFrame::ID_BUTTON1 = wxNewId();
+const long components_choice_wxwidgetsFrame::ID_TEXTCTRL1 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(components_choice_wxwidgetsFrame,wxFrame)
@@ -71,7 +74,7 @@ components_choice_wxwidgetsFrame::components_choice_wxwidgetsFrame(wxWindow* par
 {
     //(*Initialize(components_choice_wxwidgetsFrame)
     Create(parent, id, _("Компоненты выбора"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
-    SetClientSize(wxSize(384,253));
+    SetClientSize(wxSize(384,323));
     {
     	wxIcon FrameIcon;
     	FrameIcon.CopyFromBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_TICK_MARK")),wxART_FRAME_ICON));
@@ -84,7 +87,7 @@ components_choice_wxwidgetsFrame::components_choice_wxwidgetsFrame(wxWindow* par
     ListBox1->Append(_("C#"));
     ListBox1->Append(_("Python"));
     ListBox1->Append(_("Delphi"));
-    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("\?\?\?"), wxPoint(64,200), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("\?\?\?"), wxPoint(48,200), wxSize(120,16), 0, _T("ID_STATICTEXT1"));
     Choice1 = new wxChoice(this, ID_CHOICE1, wxPoint(40,16), wxSize(136,23), 0, 0, 0, wxDefaultValidator, _T("ID_CHOICE1"));
     Choice1->SetSelection( Choice1->Append(_("C")) );
     Choice1->Append(_("C++"));
@@ -92,7 +95,7 @@ components_choice_wxwidgetsFrame::components_choice_wxwidgetsFrame(wxWindow* par
     Choice1->Append(_("C#"));
     Choice1->Append(_("Python"));
     Choice1->Append(_("Delphi"));
-    CheckBox1 = new wxCheckBox(this, ID_CHECKBOX1, _("C++"), wxPoint(56,224), wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX1"));
+    CheckBox1 = new wxCheckBox(this, ID_CHECKBOX1, _("C++"), wxPoint(240,200), wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX1"));
     CheckBox1->SetValue(false);
     wxString __wxRadioBoxChoices_1[6] =
     {
@@ -104,7 +107,8 @@ components_choice_wxwidgetsFrame::components_choice_wxwidgetsFrame(wxWindow* par
     	_("Delphi")
     };
     RadioBox1 = new wxRadioBox(this, ID_RADIOBOX1, _("Выбери"), wxPoint(224,16), wxSize(136,168), 6, __wxRadioBoxChoices_1, 1, 0, wxDefaultValidator, _T("ID_RADIOBOX1"));
-    Button1 = new wxButton(this, ID_BUTTON1, _("Выход"), wxPoint(264,208), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
+    Button1 = new wxButton(this, ID_BUTTON1, _("Выход"), wxPoint(280,280), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
+    TextCtrl1 = new wxTextCtrl(this, ID_TEXTCTRL1, wxEmptyString, wxPoint(40,224), wxSize(136,80), wxTE_MULTILINE|wxTE_READONLY|wxTE_RICH2|wxTE_NOHIDESEL, wxDefaultValidator, _T("ID_TEXTCTRL1"));
     Center();
 
     Connect(ID_LISTBOX1,wxEVT_COMMAND_LISTBOX_SELECTED,(wxObjectEventFunction)&components_choice_wxwidgetsFrame::OnListBox1Select);
@@ -132,6 +136,7 @@ void components_choice_wxwidgetsFrame::OnListBox1Select(wxCommandEvent& event) {
     int i = ListBox1 -> GetSelection();
     wxString s = ListBox1 -> GetString(i);
     StaticText1 -> SetLabel(s);
+    TextCtrl1 -> AppendText(s+"\n");
 }
 
 
@@ -154,5 +159,6 @@ void components_choice_wxwidgetsFrame::OnCheckBox1Click(wxCommandEvent& event) {
     } else {
         StaticText1 -> SetLabel("Нет!");
     }
+    TextCtrl1 -> Clear();
 }
 ```
