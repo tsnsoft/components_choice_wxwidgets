@@ -65,7 +65,7 @@ components_choice_wxwidgetsFrame::components_choice_wxwidgetsFrame(wxWindow* par
 {
     //(*Initialize(components_choice_wxwidgetsFrame)
     Create(parent, id, _("Компоненты выбора"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
-    SetClientSize(wxSize(384,253));
+    SetClientSize(wxSize(384,294));
     {
     	wxIcon FrameIcon;
     	FrameIcon.CopyFromBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_TICK_MARK")),wxART_FRAME_ICON));
@@ -97,8 +97,8 @@ components_choice_wxwidgetsFrame::components_choice_wxwidgetsFrame(wxWindow* par
     	_("Python"),
     	_("Delphi")
     };
-    RadioBox1 = new wxRadioBox(this, ID_RADIOBOX1, _("Выбери"), wxPoint(224,16), wxSize(136,168), 6, __wxRadioBoxChoices_1, 1, 0, wxDefaultValidator, _T("ID_RADIOBOX1"));
-    Button1 = new wxButton(this, ID_BUTTON1, _("Выход"), wxPoint(264,208), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
+    RadioBox1 = new wxRadioBox(this, ID_RADIOBOX1, _("Выбери"), wxPoint(224,16), wxSize(128,208), 6, __wxRadioBoxChoices_1, 1, 0, wxDefaultValidator, _T("ID_RADIOBOX1"));
+    Button1 = new wxButton(this, ID_BUTTON1, _("Выход"), wxPoint(264,240), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
     Center();
 
     Connect(ID_LISTBOX1,wxEVT_COMMAND_LISTBOX_SELECTED,(wxObjectEventFunction)&components_choice_wxwidgetsFrame::OnListBox1Select);

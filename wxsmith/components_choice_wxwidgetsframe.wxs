@@ -4,7 +4,7 @@
 		<title>Компоненты выбора</title>
 		<centered>1</centered>
 		<icon stock_id="wxART_TICK_MARK" />
-		<size>384,253</size>
+		<size>384,294</size>
 		<style>wxDEFAULT_DIALOG_STYLE</style>
 		<object class="wxListBox" name="ID_LISTBOX1" variable="ListBox1" member="yes">
 			<content>
@@ -54,12 +54,12 @@
 			</content>
 			<default>-1</default>
 			<pos>224,16</pos>
-			<size>136,168</size>
+			<size>128,208</size>
 			<handler function="OnRadioBox1Select" entry="EVT_RADIOBOX" />
 		</object>
 		<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
 			<label>Выход</label>
-			<pos>264,208</pos>
+			<pos>264,240</pos>
 			<handler function="OnQuit" entry="EVT_BUTTON" />
 		</object>
 	</object>
