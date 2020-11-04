@@ -64,7 +64,7 @@ END_EVENT_TABLE()
 components_choice_wxwidgetsFrame::components_choice_wxwidgetsFrame(wxWindow* parent,wxWindowID id)
 {
     //(*Initialize(components_choice_wxwidgetsFrame)
-    Create(parent, id, _("Компоненты выбора"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
+    Create(parent, id, _("ГЉГ®Г¬ГЇГ®Г­ГҐГ­ГІГ» ГўГ»ГЎГ®Г°Г "), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
     SetClientSize(wxSize(384,294));
     {
     	wxIcon FrameIcon;
@@ -97,8 +97,8 @@ components_choice_wxwidgetsFrame::components_choice_wxwidgetsFrame(wxWindow* par
     	_("Python"),
     	_("Delphi")
     };
-    RadioBox1 = new wxRadioBox(this, ID_RADIOBOX1, _("Выбери"), wxPoint(224,16), wxSize(128,208), 6, __wxRadioBoxChoices_1, 1, 0, wxDefaultValidator, _T("ID_RADIOBOX1"));
-    Button1 = new wxButton(this, ID_BUTTON1, _("Выход"), wxPoint(264,240), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
+    RadioBox1 = new wxRadioBox(this, ID_RADIOBOX1, _("Г‚Г»ГЎГҐГ°ГЁ"), wxPoint(224,16), wxSize(128,208), 6, __wxRadioBoxChoices_1, 1, 0, wxDefaultValidator, _T("ID_RADIOBOX1"));
+    Button1 = new wxButton(this, ID_BUTTON1, _("Г‚Г»ГµГ®Г¤"), wxPoint(264,240), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
     Center();
 
     Connect(ID_LISTBOX1,wxEVT_COMMAND_LISTBOX_SELECTED,(wxObjectEventFunction)&components_choice_wxwidgetsFrame::OnListBox1Select);
@@ -142,10 +142,10 @@ void components_choice_wxwidgetsFrame::OnRadioBox1Select(wxCommandEvent& event) 
 }
 
 void components_choice_wxwidgetsFrame::OnCheckBox1Click(wxCommandEvent& event) {
-    boolean b = CheckBox1 -> GetValue();
+    bool b = CheckBox1 -> GetValue();
     if (b == true) {
-        StaticText1 -> SetLabel("Да!");
+        StaticText1 -> SetLabel("Г„Г !");
     } else {
-        StaticText1 -> SetLabel("Нет!");
+        StaticText1 -> SetLabel("ГЌГҐГІ!");
     }
 }
